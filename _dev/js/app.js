@@ -317,9 +317,52 @@
 //       <button onClick={shoeDetail}>
 //         {showdetails}
 //       </button>
-//       <p className={details}> some details</p>
+//       <div className={details}> some details
+//         <ul>
+//             {app.options}
+//         </ul>
+
+
+//       </div>
 //     </div>
 //   );
 //   ReactDOM.render(template, approut);
 // };
 // render();
+
+
+/*------------------------------------------------
+|
+|
+|                 CLASS
+|
+|
+|------------------------------------------------*/
+// class Mathematic  {
+//     plus(...items)
+//     {       
+//         i = 0    
+//         items.forEach(function(item){
+//             i += item;        
+//         })
+//         return i;
+//     }
+// }
+// let sum = new Mathematic;
+// const y = sum.plus(12,14,16,18);
+
+
+
+// const approut = document.getElementById("app");
+// const render = () => {
+//   const template = (
+//     <div>
+//       {y}
+//     </div>
+//   );
+//   ReactDOM.render(template, approut);
+// };
+// render();
+
+
+
