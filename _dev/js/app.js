@@ -350,9 +350,6 @@
 // }
 // let sum = new Mathematic;
 // const y = sum.plus(12,14,16,18);
-
-
-
 // const approut = document.getElementById("app");
 // const render = () => {
 //   const template = (
@@ -366,3 +363,79 @@
 
 
 
+/*------------------------------------------------
+|
+|
+|                 CLASS 2 
+|
+|
+|------------------------------------------------*/
+// class Person{
+//     constructor(name='Anonymous',age = 0){
+//         this.name   = name;
+//         this.age    = age;
+//     }
+//     getGretting(){
+//         return `Hi . I am ${this.name}`;
+//     }
+//     getDescription(){
+//         return `${this.name} is ${this.age} years old.`;
+//     }
+// }
+// class Student extends Person{
+//     constructor(name,age,magor){
+//         super(name,age);
+//         this.magor = magor;
+//     }
+// }
+// const me = new Student("test tester",26,"fishery");
+// const other = new Student("other guy",40,"farming");
+// console.log("me");
+// console.log(me.name);
+
+// const approut = document.getElementById("app");
+// const render = () => {
+//   const template = (
+//     <div>
+//       {me.name}
+//       <br />
+//       {other.name}
+//     </div>
+//   );
+//   ReactDOM.render(template, approut);
+// };
+// render();
+
+
+// REACT COMPONENT
+// class Header extends React.Component {
+//   render() {
+//     return (
+//       <header>
+//         <nav>
+//           <ul>
+//             <li>
+//             <a href="#">منو</a>
+//             </li>
+//             <li>
+//             <a href="#">منو</a>
+//             </li>
+//           </ul>
+//         </nav>
+//       </header>
+//     );
+//   }
+// }
+// const approut = document.getElementById("app");
+// const render = () => {
+//   const template = (
+//     <div>
+//     <Header />
+//       <p>
+//         تست
+//       </p>
+//     </div>
+//   );
+//   ReactDOM.render(template, approut);
+// };
+// render();
