@@ -28,6 +28,9 @@
 //     </div>
 // );
 
+const { findLastIndex } = require("lodash");
+const { log } = require("neo-async");
+
 
 
 
@@ -439,3 +442,231 @@
 //   ReactDOM.render(template, approut);
 // };
 // render();
+
+
+
+/*------------------------------------
+|
+|
+|           Counter App                
+|         State Component             
+|
+|-------------------------------------*/
+// class Counter extends React.Component{
+//     constructor(props){
+//         super(props);
+//         this.addOne     = this.addOne.bind(this);
+//         this.minusOne   = this.minusOne.bind(this);
+//         this.reset      = this.reset.bind(this);
+//         this.state      = {
+//             count   :  0,
+
+//         }
+    
+//     } 
+//     addOne(){
+//         // this.state.count++;
+//         // console.log(this.state.count);
+//         this.setState((prev)=>{
+//             return {
+//                 count : prev.count + 1,
+//             }
+//         })    
+//     }
+//     minusOne(){
+//         this.setState((prev)=>{
+//             if(prev.count > 0){
+//             return {
+//                 count : prev.count - 1,
+//             }
+//             }
+//         })    
+//     }
+//     reset(){
+//         this.setState((prev)=>{
+//             return {
+//                 count : 0,
+//             }
+//         })    
+//     }
+//     render(){
+//         return (
+//             <div>
+//                 <h1>
+//                     Counter {this.state.count}
+//                 </h1>
+//                 <button onClick={this.addOne}>+</button>
+//                 <button onClick={this.minusOne}>-</button>
+//                 <button onClick={this.reset}>reset</button>
+//             </div>
+//         )
+//     }
+// }
+
+// const approut = document.getElementById("app");
+// const final = () => {
+//   ReactDOM.render(<Counter />, approut);
+// };
+
+// final();
+
+
+
+
+
+
+
+
+/*------------------------------------
+|
+|
+|               Indecision App
+|           Nesting Component
+|
+|-------------------------------------*/
+// const createListItem = () => {
+
+// }
+
+// class Header extends React.Component {
+//     render() {
+//         return (
+//             <header>
+//                 <h1 className="text-center">
+//                     {this.props.title}
+//                 </h1>
+//             </header>
+//         );
+//     }
+// }
+
+// class Actions extends React.Component {
+//     constructor(props){
+//         super(props);
+//         this.removeAll = this.removeAll.bind(this);
+//     }
+//     random = (length) => {
+//         return Math.random() * length;
+//     }
+//     removeAll = ()=>{
+//         console.log("Aaa");
+//         console.log(this.props.lists);
+        
+//         lists = []; 
+
+//     }
+//     render() {
+//         return (
+//             <div className="d-flex gap-2">
+//                 <button onClick={this.random(4)} className="btn btn-outline-success">
+//                     {this.props.makeDecision}
+//                 </button>
+//                 <button onClick={this.removeAll} className="btn btn-outline-success">
+//                     {this.props.removeAllTxt}
+//                 </button>
+//             </div>
+//         );
+//     }
+// }
+
+// class Options extends React.Component {
+//     render() {
+//         return (
+//             <div className="bg-danger-subtle p-3 text-dark my-3">
+//                 <h1 className="h5">
+//                     {this.props.subtitle}
+//                 </h1>
+//                 <h2 className="h6">
+//                     {this.props.desc}
+//                 </h2>
+//                 <ul>
+//                     {
+//                     this.props.lists.map(list =><Option key={list}  listText={list} />)
+//                     }
+//                 </ul>
+//             </div>
+//         );
+//     }
+// }
+
+
+
+// class Option extends React.Component{
+//     render() {
+//         return (
+//             <li key={this.props.listText}>
+//                 {this.props.listText}
+//             </li>
+//         );
+//     }
+// }
+
+
+
+
+// class AddOptions extends React.Component {
+
+//     addToList = e => {
+//         e.preventDefault();
+//         const option = e.target.elements.option.value.trim().toLowerCase();
+//         if (option) {
+//             if (!this.props.lists.includes(option)) {
+//                 this.props.lists.push(option);
+//                 console.log(this.props.lists);
+//                 e.target.elements.option.value = "";
+//                 final();
+//             } else {
+//                 alert("your option already in the list");
+//                 final();
+//             }
+//         }
+//         console.log("Aaaa");
+//     }  
+//     render() {
+//         return (
+//             <form onSubmit={this.addToList} className="text-start">
+//                 <label for="option" className="form-label">
+//                     Add items One by One:
+//                 </label>
+//                 <div className="d-flex gap-1">
+//                     <input name="option" type="text" className="form-control" />
+//                     <button className="btn btn-outline-success">Send</button>
+//                 </div>
+//             </form>
+
+//         );
+//     }
+// }
+
+
+
+// class Indecision extends React.Component {
+//     render() {
+//         const title        = "Indecision App";
+//         const subtitle     = "put your desteny in hand of a computer";
+//         const desc         = "add some item by the form at bellow";
+//         const makeDecision = "Make Decision";
+//         const removeAllTxt = "removeAll";
+//         let lists = ["test"];
+//         return (
+//             <div className="col-12 col-md-6 m-auto bg-dark text-light text-center p-3 rounded-3 shadow-lg">
+//                 <Header title={title} />
+//                 <Actions makeDecision={makeDecision} removeAllTxt={removeAllTxt} lists={lists} />
+//                 <Options subtitle={subtitle} desc={desc} lists={lists} />
+//                 <AddOptions lists={lists} />
+//             </div>
+//         );
+//     }
+// }
+
+
+
+
+// const approut = document.getElementById("app");
+// const final = () => {
+//     const template = (
+//         <Indecision />
+//     );
+//     ReactDOM.render(template, approut);
+// };
+// final();
