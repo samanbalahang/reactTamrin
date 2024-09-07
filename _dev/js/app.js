@@ -674,203 +674,203 @@ const { log } = require("neo-async");
 |
 |-------------------------------------*/
 
-class Header extends React.Component {
-    render() {
-        return (
-            <header>
-                <h1 className="text-center">
-                    {this.props.title}
-                </h1>
-            </header>
-        );
-    }
-}
+// class Header extends React.Component {
+//     render() {
+//         return (
+//             <header>
+//                 <h1 className="text-center">
+//                     {this.props.title}
+//                 </h1>
+//             </header>
+//         );
+//     }
+// }
 
-class Actions extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    random = () => {
-        if (this.props.hasOptions) {
-            let rand = Math.floor(Math.random() * this.props.hasOptions);
-            console.log(rand);
-            alert(this.props.lists[rand]);
-        }
-    }
-    render() {
-        return (
-            <div className="d-flex gap-2">
-                <button
-                    onClick={this.random}
-                    className="btn btn-outline-success"
-                    disabled={!this.props.hasOptions}
-                >
-                    {this.props.makeDecision}
-                </button>
-                <button
-                    onClick={this.props.handelDeleteOptions}
-                    className="btn btn-outline-success"
-                    disabled={!this.props.hasOptions}
-                >
-                    {this.props.removeAllTxt}
-                </button>
-            </div>
-        );
-    }
-}
-class Formsy extends React.Component {
-    constructor(props) {
-        super(props);
+// class Actions extends React.Component {
+//     constructor(props) {
+//         super(props);
+//     }
+//     random = () => {
+//         if (this.props.hasOptions) {
+//             let rand = Math.floor(Math.random() * this.props.hasOptions);
+//             console.log(rand);
+//             alert(this.props.lists[rand]);
+//         }
+//     }
+//     render() {
+//         return (
+//             <div className="d-flex gap-2">
+//                 <button
+//                     onClick={this.random}
+//                     className="btn btn-outline-success"
+//                     disabled={!this.props.hasOptions}
+//                 >
+//                     {this.props.makeDecision}
+//                 </button>
+//                 <button
+//                     onClick={this.props.handelDeleteOptions}
+//                     className="btn btn-outline-success"
+//                     disabled={!this.props.hasOptions}
+//                 >
+//                     {this.props.removeAllTxt}
+//                 </button>
+//             </div>
+//         );
+//     }
+// }
+// class Formsy extends React.Component {
+//     constructor(props) {
+//         super(props);
        
         
-    }
-    random = (e) => {
-        e.preventDefault();
-        // console.log(e.currentTarget.option.value);
-        if(e.currentTarget.option.value.trim() !=""){
-            const item=e.currentTarget.option.value.trim();
-            {this.props.handelAddOptions(item)}
-            e.currentTarget.option.value = "";
-        }        
-    }
-    render() {
-        return (
-            <form onSubmit={this.random} className="text-start" method="POST">
-                <label for="option" className="form-label">
-                    Add items One by One:
-                </label>
-                <div className="d-flex gap-1">
-                    <input name="option" type="text" className="form-control" />
-                    <button className="btn btn-outline-success">Send</button>
-                </div>
-            </form>
-        );
-    }
-}
+//     }
+//     random = (e) => {
+//         e.preventDefault();
+//         // console.log(e.currentTarget.option.value);
+//         if(e.currentTarget.option.value.trim() !=""){
+//             const item=e.currentTarget.option.value.trim();
+//             {this.props.handelAddOptions(item)}
+//             e.currentTarget.option.value = "";
+//         }        
+//     }
+//     render() {
+//         return (
+//             <form onSubmit={this.random} className="text-start" method="POST">
+//                 <label for="option" className="form-label">
+//                     Add items One by One:
+//                 </label>
+//                 <div className="d-flex gap-1">
+//                     <input name="option" type="text" className="form-control" />
+//                     <button className="btn btn-outline-success">Send</button>
+//                 </div>
+//             </form>
+//         );
+//     }
+// }
 
-class Options extends React.Component {
-    render() {
-        return (
-            <div className="bg-danger-subtle p-3 text-dark my-3">
-                <h1 className="h5">
-                    {this.props.subtitle}
-                </h1>
-                <h2 className="h6">
-                    {this.props.desc}
-                </h2>
-                <ul>
-                    {
-                        this.props.lists.map(list => <Option key={list} listText={list} />)
-                    }
-                </ul>
-            </div>
-        );
-    }
-}
+// class Options extends React.Component {
+//     render() {
+//         return (
+//             <div className="bg-danger-subtle p-3 text-dark my-3">
+//                 <h1 className="h5">
+//                     {this.props.subtitle}
+//                 </h1>
+//                 <h2 className="h6">
+//                     {this.props.desc}
+//                 </h2>
+//                 <ul>
+//                     {
+//                         this.props.lists.map(list => <Option key={list} listText={list} />)
+//                     }
+//                 </ul>
+//             </div>
+//         );
+//     }
+// }
 
-class Option extends React.Component {
-    render() {
-        return (
-            <li key={this.props.listText}>
-                {this.props.listText}
-            </li>
-        );
-    }
-}
+// class Option extends React.Component {
+//     render() {
+//         return (
+//             <li key={this.props.listText}>
+//                 {this.props.listText}
+//             </li>
+//         );
+//     }
+// }
 
-class AddOptions extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    random(e) {   
-        e.preventDefault();
-        console.log(this.props.lists);
-        console.log(this.props.lists);
-        const option = e.currentTarget.option.value.trim();
-        if (option) {
-            // this.props.handelAddOptions(option);
-            console.log(this.props.lists);
+// class AddOptions extends React.Component {
+//     constructor(props) {
+//         super(props);
+//     }
+//     random(e) {   
+//         e.preventDefault();
+//         console.log(this.props.lists);
+//         console.log(this.props.lists);
+//         const option = e.currentTarget.option.value.trim();
+//         if (option) {
+//             // this.props.handelAddOptions(option);
+//             console.log(this.props.lists);
             
-        }
+//         }
       
-    }
-    render() {
-        return (
-            <form onSubmit={this.random} className="text-start">
-                <label for="option" className="form-label">
-                    Add items One by One:
-                </label>
-                <div className="d-flex gap-1">
-                    <input name="option" type="text" className="form-control" />
-                    <button className="btn btn-outline-success">Send</button>
-                </div>
-            </form>
-        );
-    }
-}
+//     }
+//     render() {
+//         return (
+//             <form onSubmit={this.random} className="text-start">
+//                 <label for="option" className="form-label">
+//                     Add items One by One:
+//                 </label>
+//                 <div className="d-flex gap-1">
+//                     <input name="option" type="text" className="form-control" />
+//                     <button className="btn btn-outline-success">Send</button>
+//                 </div>
+//             </form>
+//         );
+//     }
+// }
 
-class Indecision extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handelDeleteOptions = this.handelDeleteOptions.bind(this);
-        this.handelAddOptions    = this.handelAddOptions.bind(this);
-        this.state = {
-            options: ["تست"],
+// class Indecision extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.handelDeleteOptions = this.handelDeleteOptions.bind(this);
+//         this.handelAddOptions    = this.handelAddOptions.bind(this);
+//         this.state = {
+//             options: ["تست"],
 
-        }
-    }
-    handelDeleteOptions() {
-        this.setState(() => {
-            return {
-                options: [],
-            }
-        })
-    }
-    handelAddOptions(items) {
-        console.log(items);
-        this.setState(oldstate => {
-            oldstate.options.push(items);
-            return {
-                option: oldstate.options,
-            }
-        })
-    }
+//         }
+//     }
+//     handelDeleteOptions() {
+//         this.setState(() => {
+//             return {
+//                 options: [],
+//             }
+//         })
+//     }
+//     handelAddOptions(items) {
+//         console.log(items);
+//         this.setState(oldstate => {
+//             oldstate.options.push(items);
+//             return {
+//                 option: oldstate.options,
+//             }
+//         })
+//     }
 
-    render() {
-        const title = "Indecision App";
-        const subtitle = "put your desteny in hand of a computer";
-        const desc = "add some item by the form at bellow";
-        const makeDecision = "Make Decision";
-        const removeAllTxt = "removeAll";
-        let lists = ["test"];
-        return (
-            <div className="col-12 col-md-6 m-auto bg-dark text-light text-center p-3 rounded-3 shadow-lg">
-                <Header title={title} />
-                <Actions
-                    makeDecision={makeDecision}
-                    removeAllTxt={removeAllTxt}
-                    lists={this.state.options}
-                    hasOptions={this.state.options.length}
-                    handelDeleteOptions={this.handelDeleteOptions}
-                />
-                <Options subtitle={subtitle} desc={desc} lists={this.state.options} />
-                <Formsy
-                    makeDecision={makeDecision}
-                    removeAllTxt={removeAllTxt}
-                    lists={this.state.options}
-                    hasOptions={this.state.options.length}
-                    handelDeleteOptions={this.handelDeleteOptions}
-                    handelAddOptions={this.handelAddOptions}
-                />
-            </div>
-        );
-    }
-}
-const approut = document.getElementById("app");
-const final = () => {
-    const template = (
-        <Indecision />
-    );
-    ReactDOM.render(template, approut);
-};
-final();
+//     render() {
+//         const title = "Indecision App";
+//         const subtitle = "put your desteny in hand of a computer";
+//         const desc = "add some item by the form at bellow";
+//         const makeDecision = "Make Decision";
+//         const removeAllTxt = "removeAll";
+//         let lists = ["test"];
+//         return (
+//             <div className="col-12 col-md-6 m-auto bg-dark text-light text-center p-3 rounded-3 shadow-lg">
+//                 <Header title={title} />
+//                 <Actions
+//                     makeDecision={makeDecision}
+//                     removeAllTxt={removeAllTxt}
+//                     lists={this.state.options}
+//                     hasOptions={this.state.options.length}
+//                     handelDeleteOptions={this.handelDeleteOptions}
+//                 />
+//                 <Options subtitle={subtitle} desc={desc} lists={this.state.options} />
+//                 <Formsy
+//                     makeDecision={makeDecision}
+//                     removeAllTxt={removeAllTxt}
+//                     lists={this.state.options}
+//                     hasOptions={this.state.options.length}
+//                     handelDeleteOptions={this.handelDeleteOptions}
+//                     handelAddOptions={this.handelAddOptions}
+//                 />
+//             </div>
+//         );
+//     }
+// }
+// const approut = document.getElementById("app");
+// const final = () => {
+//     const template = (
+//         <Indecision />
+//     );
+//     ReactDOM.render(template, approut);
+// };
+// final();
