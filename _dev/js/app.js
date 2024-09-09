@@ -721,8 +721,6 @@ const { log } = require("neo-async");
 // class Formsy extends React.Component {
 //     constructor(props) {
 //         super(props);
-       
-        
 //     }
 //     random = (e) => {
 //         e.preventDefault();
@@ -778,44 +776,13 @@ const { log } = require("neo-async");
 //     }
 // }
 
-// class AddOptions extends React.Component {
-//     constructor(props) {
-//         super(props);
-//     }
-//     random(e) {   
-//         e.preventDefault();
-//         console.log(this.props.lists);
-//         console.log(this.props.lists);
-//         const option = e.currentTarget.option.value.trim();
-//         if (option) {
-//             // this.props.handelAddOptions(option);
-//             console.log(this.props.lists);
-            
-//         }
-      
-//     }
-//     render() {
-//         return (
-//             <form onSubmit={this.random} className="text-start">
-//                 <label for="option" className="form-label">
-//                     Add items One by One:
-//                 </label>
-//                 <div className="d-flex gap-1">
-//                     <input name="option" type="text" className="form-control" />
-//                     <button className="btn btn-outline-success">Send</button>
-//                 </div>
-//             </form>
-//         );
-//     }
-// }
-
 // class Indecision extends React.Component {
 //     constructor(props) {
 //         super(props);
 //         this.handelDeleteOptions = this.handelDeleteOptions.bind(this);
 //         this.handelAddOptions    = this.handelAddOptions.bind(this);
 //         this.state = {
-//             options: ["تست"],
+//             options: [],
 
 //         }
 //     }
@@ -831,7 +798,7 @@ const { log } = require("neo-async");
 //         this.setState(oldstate => {
 //             oldstate.options.push(items);
 //             return {
-//                 option: oldstate.options,
+//                 options: oldstate.options,
 //             }
 //         })
 //     }
@@ -853,7 +820,11 @@ const { log } = require("neo-async");
 //                     hasOptions={this.state.options.length}
 //                     handelDeleteOptions={this.handelDeleteOptions}
 //                 />
-//                 <Options subtitle={subtitle} desc={desc} lists={this.state.options} />
+//                 <Options 
+//                     subtitle={subtitle} 
+//                     desc={desc} 
+//                     lists={this.state.options} 
+//                 />
 //                 <Formsy
 //                     makeDecision={makeDecision}
 //                     removeAllTxt={removeAllTxt}
@@ -874,3 +845,68 @@ const { log } = require("neo-async");
 //     ReactDOM.render(template, approut);
 // };
 // final();
+
+
+
+/*------------------------------------
+|
+|          TAMRIN CLASS
+|            SET STATE
+|
+|-------------------------------------*/
+// class MyForm extends React.Component{
+//     constructor(props) {
+//         super(props);
+//         console.log(this.props);
+//     }
+//     formSubmit = (e) => {
+//         e.preventDefault();
+//         this.props.headingContext("fame");    
+//     }
+//     render(){
+//         return(
+//             <div>
+//                 <form onSubmit={this.formSubmit}>
+//                     <input type="submit" />
+//                 </form>
+//             </div>
+//         );
+//     }
+// }
+
+// class MyApp extends React.Component{
+//     constructor(props){
+//         super(props);
+//         this.headingContext = this.headingContext.bind(this);
+//         this.state = {
+//             heading: '',
+
+//         }
+//     }
+//     headingContext(item){
+//         console.log(item);
+//         this.setState(() => {
+//             return {
+//                 heading: item,
+//             }
+//         })
+//     }
+//     render(){
+//         return(
+//             <div>
+//                 <h1>
+//                     {this.state.heading}
+//                 </h1>
+//                 <p>
+//                     test
+//                 </p>
+//                 <MyForm  headingContext = {this.headingContext}/>
+//             </div>
+//         );
+//     }
+// }
+
+
+// // START 
+// let approute = document.getElementById("app");
+// ReactDOM.render(<MyApp />,approute);
